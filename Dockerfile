@@ -2,7 +2,7 @@
 # docker build -t mosazhaw/djl-sentiment-analysis .
 # docker run -p 9000:8080 -d mosazhaw/djl-sentiment-analysis
 
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:25-jdk-noble
 
 # Copy Files
 WORKDIR /usr/src/app
