@@ -1,3 +1,17 @@
+// Load version info on page load
+window.addEventListener('DOMContentLoaded', function() {
+    fetch('/info')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('versionInfo').textContent = 
+                `Java ${data.javaVersion} | Spring Boot ${data.springBootVersion}`;
+        })
+        .catch(error => {
+            console.error('Error loading version info:', error);
+            document.getElementById('versionInfo').textContent = 'Version info unavailable';
+        });
+});
+
 function getSentiment(event, text) {
     console.log(text);
 
